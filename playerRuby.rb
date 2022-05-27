@@ -8,7 +8,7 @@ class Player < Sprite
     @sound = Sound.new("sounds/get.wav")
     @score = 0
     @active = false # 変更
-    @game_end = false # 追加
+    @game_end = false # 追加a
     super(x, y, image)
   end
 
