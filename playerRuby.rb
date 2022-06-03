@@ -13,10 +13,18 @@ class Player < Sprite
   end
 
   def update
-    dx = Input.x
-    if (dx == -1 && self.x > 0) || (dx == 1 && self.x < (640 - image.width)) 
-      self.x += dx
+    dx = Input.mouse_x
+    
+    
+    if (x<dx && self.x<600)
+      self.x += 1
+     
+    
+    elsif(dx<x && 70<self.x)
+      self.x -= 1
     end
+
+
   end
 
   def shot
