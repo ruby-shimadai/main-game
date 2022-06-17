@@ -18,6 +18,19 @@ class Item < Sprite
       self.vanish
     end
 
+    def shot(playerRuby)
+      
+        dx = Input.mouse_x
+        if (x<dx && playerRuby.x<600)
+          playerRuby.x += 3
+       
+      
+        elsif(dx<x && 70<playerRuby.x)
+          playerRuby.x -= 3
+        end
+      
+  
+    end
    
 
   end
