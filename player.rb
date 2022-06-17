@@ -14,17 +14,11 @@ class Player < Sprite
 
   def update
     dx = Input.mouse_x
-    
-    
     if (x<dx && self.x<600)
       self.x += 1
-     
-    
     elsif(dx<x && 70<self.x)
       self.x -= 1
     end
-
-
   end
 
   def shot

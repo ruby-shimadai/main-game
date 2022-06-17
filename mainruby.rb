@@ -3,7 +3,7 @@ require 'dxruby'
 require_relative 'apple'
 require_relative 'bomd'
 require_relative 'item'
-require_relative 'playerRuby'
+require_relative 'player'
 
 Window.bgcolor = [255, 128, 255, 255]
 ground_img = Image.new(640, 80, [255, 116, 80, 48])
@@ -28,17 +28,16 @@ item_n.times do
   items << Item.new()
 end
 
-timer = 0
+timer = 20
 startTime = nil
-
 player = Player.new()
 
 Window.loop do
   timer = timer + 1
-
   if(startTime)
    # 秒数カウント
-    if((timer-startTime)/60 >=10)
+   puts timer-startTime
+    if((timer-startTime)/60 >=20)
       puts timer-startTime
       player.game_end = true
       startTime = nil
@@ -50,7 +49,7 @@ Window.loop do
 
 
   if player.active
-    Window.draw_font(50, 50, "秒数：#{(timer-startTime)/60 }", font, {color: C_BLUE})
+    Window.draw_font(50, 50, "秒数：#{20-(timer-startTime)/60 }", font, {color: C_BLUE})
     Sprite.update(apples)
     Sprite.update(bombs)
     Sprite.update(items)
