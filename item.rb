@@ -22,11 +22,11 @@ class Item < Sprite
       
         dx = Input.mouse_x
         if (x<dx && playerRuby.x<600)
-          playerRuby.x += 3
+          playerRuby.x += 4
        
       
         elsif(dx<x && 70<playerRuby.x)
-          playerRuby.x -= 3
+          playerRuby.x -= 4
         end
       
   
