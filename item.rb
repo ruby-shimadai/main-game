@@ -3,6 +3,7 @@ class Item < Sprite
       image = Image.load("images/item.png")
       x = rand(0..(640 - image.width))
       y = 0
+      @sound = Sound.new("sounds/get.wav")
       @speed = rand(1..5)
       super(x, y, image)
     end
