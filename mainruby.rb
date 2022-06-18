@@ -9,6 +9,7 @@ Window.bgcolor = [255, 128, 255, 255]
 ground_img = Image.new(640, 80, [255, 116, 80, 48])
 ground_img.box_fill(0, 0, 640, 10, [255, 0, 128, 0])
 font = Font.new(32)
+bgm = Sound.new("sounds/get.wav")
 
 apples = []
 apple_n = 5
@@ -42,7 +43,6 @@ Window.loop do
       player.game_end = true
       startTime = nil
       player.active = false
-      
     end
   end
   Window.draw(0, 400, ground_img)
@@ -88,6 +88,7 @@ Window.loop do
     Window.draw_font(120, 282, "スペースキー：ゲームスタート", font, {color: C_BLUE})
     Window.draw_font(181, 314, "ESCキー：ゲーム終了", font, {color: C_BLUE})
     if Input.key_push?(K_SPACE)
+      bgm.play
       startTime = timer
       if player.game_end
         apples.map {|apple| apple.vanish}
